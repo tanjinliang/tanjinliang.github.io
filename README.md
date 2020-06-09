@@ -1,4 +1,4 @@
-## Welcome to GitHub Pages
+## Welcome to 二狗 Pages
 
 You can use the [editor on GitHub](https://github.com/tanjinliang/tanjinliang.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
