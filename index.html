@@ -42,18 +42,10 @@
 						<!-- Introduction -->
 							<section id="intro" class="main">
 								<div class="spotlight">
-									<div class="content">
-										<header class="major">
-											<h2>Ipsum sed adipiscing</h2>
-										</header>
-										<p>Sed lorem ipsum dolor sit amet nullam consequat feugiat consequat magna
-										adipiscing magna etiam amet veroeros. Lorem ipsum dolor tempus sit cursus.
-										Tempus nisl et nullam lorem ipsum dolor sit amet aliquam.</p>
-										<ul class="actions">
-											<li><a href="generic.html" class="button">Learn More</a></li>
-										</ul>
+									<div id="itext">
+										
 									</div>
-									<span class="image"><img src="images/pic01.jpg" alt="" /></span>
+									
 								</div>
 							</section>
 
@@ -184,8 +176,34 @@
 			$(function(){
 				var days = daysDistance(today(),"2017-01-25")+1;
 				$("#dayspan").text(days);
+				
+				
+				
+				
+				
+				
 			})
-			 
+			
+			
+				let i = 0,
+				timer = 0,
+				str = '用JS实现动态打字效果'
+  function typing () {
+  
+  let divTyping = document.getElementById('itext')
+				
+					if (i <= str.length) {
+						divTyping.innerHTML = str.slice(0, i++) + '_'
+						timer = setTimeout(typing, 200)
+					}
+				else {
+					divTyping.innerHTML = str//结束打字,移除 _ 光标
+					clearTimeout(timer)
+					}
+				}
+
+typing();
+
 function today(){
     var today=new Date();
     var str="";
