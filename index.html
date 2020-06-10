@@ -177,7 +177,7 @@
 				var days = daysDistance(today(),"2017-01-25")+1;
 				$("#dayspan").text(days);
 				
-				
+				typing();
 				
 				
 				
@@ -187,14 +187,14 @@
 			
 				let i = 0,
 				timer = 0,
-				str = '用JS实现动态打字效果'
+				str = '往后余生，我的是你的，你的还是你的。'
   function typing () {
   
   let divTyping = document.getElementById('itext')
 				
 					if (i <= str.length) {
 						divTyping.innerHTML = str.slice(0, i++) + '_'
-						timer = setTimeout(typing, 200)
+						timer = setTimeout(typing, 400)
 					}
 				else {
 					divTyping.innerHTML = str//结束打字,移除 _ 光标
@@ -202,7 +202,7 @@
 					}
 				}
 
-typing();
+
 
 function today(){
     var today=new Date();
