@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Stellar by HTML5 UP</title>
+		<title>For Us</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -19,19 +19,20 @@
 
 				<!-- Header -->
 					<header id="header" class="alt">
-						<span class="logo"><img src="images/logo.svg" alt="" /></span>
-						<h1>Stellar</h1>
-						<p>Just another free, fully responsive site template<br />
-						built by <a href="https://twitter.com/ajlkn">@ajlkn</a> for <a href="https://html5up.net">HTML5 UP</a>.</p>
+					<!--	<span class="logo"><img src="images/logo.svg" alt="" /></span>-->
+						<h2>张铁蛋今天是我们认识的第</h2>
+						<h1><span id="dayspan" style="color:#DD0000">1234</span><span style="font-size: 0.5em;">天</span></h1>
+						<p>由始至终只有你一位难以代替<br />
+						
 					</header>
 
 				<!-- Nav -->
 					<nav id="nav">
 						<ul>
-							<li><a href="#intro" class="active">Introduction</a></li>
-							<li><a href="#first">First Section</a></li>
-							<li><a href="#second">Second Section</a></li>
-							<li><a href="#cta">Get Started</a></li>
+							<li><a href="#intro" class="active">One</a></li>
+							<li><a href="#first">Two</a></li>
+							<li><a href="#second">Three</a></li>
+							<li><a href="#cta">Four</a></li>
 						</ul>
 					</nav>
 
@@ -181,9 +182,38 @@
 			<script src="assets/js/main.js"></script>
 			<script>
 			$(function(){
-				
+				var days = daysDistance(today(),"2017-01-25")+1;
+				$("#dayspan").text(days);
 			})
-				
+			 
+function today(){
+    var today=new Date();
+    var str="";
+    str+=today.getFullYear()+"-";
+    var month=today.getMonth()+1;//返回值是 0（一月） 到 11（十二月） 之间的一个整数。
+    if(month<10){
+        str+="0";
+    }
+    str+=month+"-";
+    var day=today.getDate();//返回值是 1 ~ 31 之间的一个整数
+    if(day<10){
+        str+="0";
+    }
+    str+=day;
+    return str;
+}
+
+function daysDistance(date1, date2) {     
+    //parse() 是 Date 的一个静态方法 , 所以应该使用 Date.parse() 来调用，而不是作为 Date 的实例方法。返回该日期距离 1970/1/1 午夜时间的毫秒数
+    date1 = Date.parse(date1);
+    date2 = Date.parse(date2);
+    //计算两个日期之间相差的毫秒数的绝对值
+    var ms= Math.abs(date2 - date1);
+    //毫秒数除以一天的毫秒数,就得到了天数
+    var days = Math.floor(ms / (24 * 3600 * 1000));
+    return days ;
+}
+
 			</script>
 	</body>
 </html>
